@@ -121,14 +121,53 @@ int main() {
     // =================================================================
 
     cout << "=== Q1 ===\n";
+    
+    // 1. Total weight
+    int k;
+    double total = 0.0;
+    for (k = 0; k < morningWeights.size(); k++) {
+        total += morningWeights[k];
+    }
+    cout << "Total weight: " << total << "\n";
+    
+    // 2. Valid weighings
+    int i, valid;
+    valid = 0;
+    for (i = 0; i < morningWeights.size(); i++) {
+        if (morningWeights[i] > 0 && morningWeights[i] <= 80) {
+            valid+=1;
+        }
+    }
+    cout << "Valid weighings: " << valid << " of "   << morningWeights.size() << "\n";
+
+    // 3. Heaviest weighing
+    int Position;
+    double Heaviest = 0.0;
+    Position = 0;
+    for (i = 0; i < morningWeights.size(); i++) {
+        if (morningWeights[i] > Heaviest) {
+            Heaviest = morningWeights[i];
+            Position = i;
+        }
+    }
+   cout << "Heaviest weighing: " << Heaviest << " kg" << " at position " << Position << "\n";
 
 
+    // 4. Longest valid run
+    int LongestRun = 0, CurrentRun = 0;
+    for (i=1; i < morningWeights.size(); i++) {
+        if (morningWeights[i] > 0 && morningWeights[i] <= 80) {
+            CurrentRun++;
+            if (CurrentRun > LongestRun) {
+                LongestRun = CurrentRun;
+            }
+        } else {
+            CurrentRun = 0;
+        }
 
-
-
-    cout << "\n";
-
-
+    }
+    cout << "Longest valid run: " << LongestRun << "\n";
+    
     // =================================================================
     //  Q2  ·  GRADE SUMMARY                 (see README)
     //  Uses: logbook
