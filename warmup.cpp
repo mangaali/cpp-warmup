@@ -174,7 +174,49 @@ int main() {
     // =================================================================
 
     cout << "=== Q2 ===\n";
+    // Number of deliveries
+    int deliveriesA =0 , deliveriesB =0 , deliveriesC =0;
+    for (Delivery d: logbook){
+        if (d.grade == 'A'){
+        deliveriesA++;
+    }
+    else;
+    if (d.grade == 'B'){
+    deliveriesB++;
+    }
+    else;
+    if (d.grade == 'C'){
+        deliveriesC++;
+    }
+    }
+  
+    
+    // Total
+    double totalA = 0.0, totalB = 0.0, totalC= 0.0;
+    for (Delivery d : logbook){
+        if (d.grade == 'A'){
+            totalA +=d.kg;
+        }
+        else;
+        if (d.grade == 'B'){
+            totalB += d.kg;
+        }
+        else;
+        if (d.grade == 'C')
+            totalC += d.kg;
+    }
 
+    // Average
+    double averageA=0.0, averageB=0.0, averageC=0.0;
+    for (Delivery d: logbook){
+        averageA = totalA / deliveriesA;
+        averageB = totalB / deliveriesB;
+        averageC = totalC / deliveriesC;
+    }
+
+    cout << "Grade A: " << deliveriesA << " deliveries, " << totalA << " kg total, " << averageA << " kg average" << "\n";
+    cout << "Grade B: " << deliveriesB << " deliveries, " << totalB << " kg total, " << averageB << " kg average" << "\n";
+    cout << "Grade C: " << deliveriesC << " deliveries, " << totalC << " kg total, " << averageC << " kg average" << "\n";
 
 
 
